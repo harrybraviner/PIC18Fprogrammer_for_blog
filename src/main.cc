@@ -83,7 +83,7 @@ int pseudoMain(char *file){
 	if( SendBuf(comPort,(unsigned char *)"DX",strlen("DX")) == -1 ) return 1;
 	n = PollComport(comPort, (unsigned char *)buf, 4095);
 	usleep(DEVICE_DELAY);
-	}while( n == 0 || *buf != 'T' );
+	}while( n == 0 );
 	
 	printf("Success!\n");
 
